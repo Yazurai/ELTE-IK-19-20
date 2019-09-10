@@ -115,28 +115,31 @@ void sign()
 void maximum()
 {
     printf("[MAXIMUM]\n");
-    float nums[3];
+    printf("Please enter the number of elements.")
+    int count;
+    if(readInt(&count)) 
+    {
+		return;
+	}
+    float nums[count];
     int numCount = 0;
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < count; i++)
     {
-        printf("Please enter number (%d/3): ", i);
-        if(readFloat(nums + sizeof(float) * i))
+        printf("Please enter number (%d/%d): ", i, count);
+        if(!readFloat(nums + sizeof(float) * i))
         {
-            numCount++;
+			return;
         }
     }
-    if(numCount == 3)
+    float biggest = *nums;
+    for(int i = 1; i < 3; i++)
     {
-        float biggest = *nums;
-        for(int i = 1; i < 3; i++)
+        if(biggest < *(nums + sizeof(float) * i))
         {
-            if(biggest < *(nums + sizeof(float) * i))
-            {
-                biggest = *(nums + sizeof(float) * i);
-            }
+            biggest = *(nums + sizeof(float) * i);
         }
-        printf("The biggest number of the three is: %f\n", biggest);
     }
+    printf("The biggest number of the %d is: %f\n", numCount, biggest);
 }
 
 void factorial()
