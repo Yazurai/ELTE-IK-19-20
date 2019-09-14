@@ -91,10 +91,8 @@ void sign() {
     readNumber(FLOAT,&num, "Please enter a number: ");
     if(num < 0) {
         sign  = -1;
-    } else {
-        if(num > 0) {
-            sign = 1;
-        }
+    } else if(num > 0) {
+        sign = 1;
     }
     printf("The sign of the number is %d.\n", sign);
 }
@@ -129,10 +127,10 @@ void remain() {
     int dividend, divisor;
     readNumber(INT, &dividend, "Please enter the dividend: ");
     readNumber(INT, &divisor, "Please enter the divisor: ");
-    while(dividend > 0) {
+    while(dividend > divisor) {
         dividend -= divisor;
     }
-    printf("The remainder is %d.\n", divisor + dividend);
+    printf("The remainder is %d.\n", dividend);
 }
 
 void hcd() {
