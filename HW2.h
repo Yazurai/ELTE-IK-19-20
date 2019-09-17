@@ -1,1 +1,2 @@
-
+void relativePrime();
+void fibonacciCheck();
