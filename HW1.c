@@ -4,6 +4,7 @@
 #include "HW1.h"
 #include "input.h"
 
+typedef enum numberType {INT = 0, UINT = 1, FLOAT = 2} numberType;
 typedef enum services_ {HELLO = 0, FTOC = 1, SIGN = 2, MAXIMUM = 3, FACTORIAL = 4, REMAIN = 5, MULTITABLE = 6, HCD = 7, EXIT = 8} services;
 
 int main() {
