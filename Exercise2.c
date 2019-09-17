@@ -17,24 +17,16 @@ int main(){
 			shouldExit = true;
 			break;
 		case FIZZBUZZ:
-		    int n;
-		    readNumber(INT, &n, "Enter n: ");
-			fizzbuzz(n);
+			fizzbuzz();
 			break;
 		case DIVISOR:
-		    int num;
-            readNumber(INT, &num, "Enter a number: ");
-			divisors(num);
+			divisors();
 			break;
 		case PERFECT:
-		    int num;
-            readNumber(INT, &num, "Enter a number: ");
-			perfect(num);
+			perfect();
 			break;
 		case PRIME:
-		    int num;
-            readNumber(INT, &num, "Enter a number: ");
-			prime(num);
+			prime();
 			break;
 		default:
 			printf("Wrong input, try again!\n");
@@ -42,7 +34,9 @@ int main(){
 	}
 }
 
-void fizzbuzz(int n){
+void fizzbuzz(){
+	int n;
+	readNumber(INT, &n, "Enter n: ");
 	for (int i = 1; i <= n; i++)
 	{
 		if(i % 3 != 0 && i % 5 != 0){
@@ -59,7 +53,10 @@ void fizzbuzz(int n){
 	}
 }
 
-void divisors(int num){
+void divisors(){
+	int num;
+	readNumber(INT, &num, "Enter a number: ");
+
 	for (int i = 1; i <= num/2; i++)
 	{
 		if(num % i == 0){
@@ -69,7 +66,10 @@ void divisors(int num){
 	printf("\n");
 }
 
-void perfect(int num){
+void perfect(){
+	int num;
+	readNumber(INT, &num, "Enter a number: ");
+
 	int sum = 0;
 	for (int i = 1; i <= num/2; i++){
 		if(num % i == 0){
@@ -84,7 +84,10 @@ void perfect(int num){
 	}
 }
 
-void prime(int num){
+void prime(){
+	int num;
+	readNumber(INT, &num, "Enter a number: ");
+
 	bool isPrime = true;
 	for (int i = 2; i <= num/2; i++){
 		if(num % i == 0){
