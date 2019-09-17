@@ -5,6 +5,7 @@
 #include "input.h"
 
 typedef enum services_ {EXIT = 0, RELPRIME = 1, FIBONACCI = 2, FTTOEURO = 3, HARD = 4} services;
+float const HUFTOEURATE = 0.00299728261f;
 
 int main(){
 	bool shouldExit = false;
@@ -23,10 +24,10 @@ int main(){
 			fibonacciCheck();
 			break;
 		case FTTOEURO:
-			perfect();
+			ftToEuro();
 			break;
 		case HARD:
-			prime();
+			//hard();
 			break;
 		default:
 			printf("Wrong input, try again!\n");
@@ -54,9 +55,9 @@ void relativePrime(){
     readNumber(INT, &a, "Enter number a: ");
     readNumber(INT, &b, "Enter number b: ");
     if(hcd(a, b) == 1){
-        printf("The two numbers are relative primes.")
+        printf("The two numbers are relative primes.");
     } else {
-        printf("The two numbers are not relative primes.")
+        printf("The two numbers are not relative primes.");
     }
 }
 
@@ -64,7 +65,7 @@ void fibonacciCheck(){
     int a = 1, b = 1, n;
     readNumber(INT, &n, "Enter number a: ");
     while(b < n){
-        c = a + b;
+        int c = a + b;
         a = b;
         b = c;
     }
@@ -73,4 +74,16 @@ void fibonacciCheck(){
     } else {
         printf("%d is not a Fibonacci number.", n);
     }
+}
+
+void ftToEuro(){
+    int n;
+    readNumber(INT, &n, "Please enter an amount in HUF");
+    for(int i = 1; i <= n; i++){
+        printf("%d HUF is %.03f EUR.\n", n, n * HUFTOEURATE);
+    }
+}
+
+void hard(){
+
 }
