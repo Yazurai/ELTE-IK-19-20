@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "main.h"
+#include "input.h"
 
 typedef enum numberType {INT = 0, UINT = 1, FLOAT = 2} numberType;
 
