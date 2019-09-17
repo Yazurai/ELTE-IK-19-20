@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "main.h"
+#include "HW1.h"
 #include "input.h"
-
-typedef enum numberType {INT = 0, UINT = 1, FLOAT = 2} numberType;
 
 typedef enum services_ {HELLO = 0, FTOC = 1, SIGN = 2, MAXIMUM = 3, FACTORIAL = 4, REMAIN = 5, MULTITABLE = 6, HCD = 7, EXIT = 8} services;
 
@@ -48,31 +46,6 @@ int main() {
         }
     }
     return 0;
-}
-
-//Reads in a float value from the console to the given float by the pointer
-void readNumber(numberType type, void *num, char *message) {
-    bool inputSuccess = false;
-    while(!inputSuccess) {
-        while(getchar() != '\n') {
-            continue;
-        }
-
-        printf("%s", message);
-
-        int check;
-        if(type == INT) {
-            check = scanf(" %d", num);
-        } else {
-            check = scanf(" %f", num);
-        }
-
-        if(check != 0) {
-            inputSuccess = (type != UINT) || (num >= 0);
-        } else {
-            printf("Wrong format!\n");
-        }
-    }
 }
 
 void hello() {
