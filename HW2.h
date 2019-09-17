@@ -5,5 +5,5 @@ void relativePrime();
 void fibonacciCheck();
 void ftToEuro();
 
-#endif // HW2_H
+#endif
 

@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "HW2.h"
-#include "input.h"
 
 typedef enum services_ {EXIT = 0, RELPRIME = 1, FIBONACCI = 2, FTTOEURO = 3, HARD = 4} services;
 float const HUFTOEURATE = 0.00299728261f;
@@ -34,6 +33,31 @@ int main(){
 		}
 	}
 }
+
+void readNumber(numberType type, void *num, char *message) {
+    bool inputSuccess = false;
+    while(!inputSuccess) {
+        while(getchar() != '\n') {
+            continue;
+        }
+
+        printf("%s", message);
+
+        int check;
+        if(type == INT) {
+            check = scanf(" %d", num);
+        } else {
+            check = scanf(" %f", num);
+        }
+
+        if(check != 0) {
+            inputSuccess = (type != UINT) || (num >= 0);
+        } else {
+            printf("Wrong format!\n");
+        }
+    }
+}
+
 
 int hcd(int a, int b) {
     if(a < b) {

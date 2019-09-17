@@ -6,4 +6,4 @@ void divisors();
 void perfect();
 void prime();
 
-#endif //EXERCISE2_H
+#endif
