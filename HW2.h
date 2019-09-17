@@ -4,7 +4,7 @@
 void relativePrime();
 void fibonacciCheck();
 void ftToEuro();
-void hard(int (*func)(int));
+void cyclefunction(int (*func)(int));
 int getCycleElem(int (*func)(int), int n, int index);
 int exampleFunc(int x);
 
