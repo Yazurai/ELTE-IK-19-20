@@ -10,6 +10,13 @@ There are 4 programming languages in the first semester.
 
 Feel free to clone the entire repo and study it. If you have any questions just shoot right away, I will help anyone.
 
+## Weekly changelog
+### 2019.09.16 - 2019.09.22
+- [x] C       
+- [x] C++
+- [x] Python
+- [x] Haskell
+
 **NOTE**
 
 A lot of the codes are very rough as I wrote it without giving it too much thought. I will try my best to come back and 
