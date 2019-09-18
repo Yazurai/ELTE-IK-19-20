@@ -1,2 +1,8 @@
+#ignore codeblocks files
+*.layout
+*.depend
+bin/
+obj/
+
 *.exe
 *.o
