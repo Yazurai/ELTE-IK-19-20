@@ -1,6 +1,12 @@
-# Imperative programming
+# ELTE IK 2019-20 Fall semester
 
-This repository will hold all of the code done on lessons as well as the home work ones. 
+This repository will hold all of the code done during practical classes and as homework. The code follows the curriculum of ELTE IK. 
+
+There are 4 programming languages in the first semester.
+- C
+- C++
+- Python
+- Haskell
 
 Feel free to clone the entire repo and study it. If you have any questions just shoot right away, I will help anyone.
 
