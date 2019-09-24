@@ -12,12 +12,18 @@ Feel free to clone the entire repo and study it. If you have any questions just 
 
 ## Weekly changelog
 ### 2019.09.23 - 2019.09.29
-|   Languague   | Specifications | Solution | Status |
-| ------------- | -------------  | -------- | ------ |
-|       C       | - | - | NONE |
-|     Python    | [spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit) | - | Working |
-|      C++      | - | - | TBD |
-|    Haskell    | - | - | TBD |
+
+- TBD = To be determined
+- NONE = Nothing to be done for this week
+- WIP = Work in progress
+- DONE = All finished
+
+|   Languague   | HW | Solution | Hand-in | Solution | Status |
+| ------------- | -- | -------- | ------- | -------- | ------ |
+|       C       |-|-|-|-|NONE|
+|     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|-|||Working|
+|      C++      |-|-|-|-|TBD|
+|    Haskell    |-|-|-|-|TBD|
 
 **NOTE**
 
@@ -26,15 +32,14 @@ tidy up the code and comment it, but I cannot promise anything.
 
 ## Semester changelog
 
-✅=Completed
-
-❎=Spec available, but not yet completed
+- ✔️=Completed
+- ❎=Spec available, but not yet completed
 
 | WEEK | C | PYTHON | C++ | HASKELL |
 | ---- | - | ------ | --- | ------- |
-| WEEK 1|[✅](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✅](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|-|-|
-| WEEK 2|||||
-| WEEK 3|||||
+| WEEK 1|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|-|-|
+| WEEK 2|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C%2B%2B/WEEK%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%202)|
+| WEEK 3|-|❎|-|-|
 | WEEK 4|||||
 | WEEK 5|||||
 | WEEK 6|||||
