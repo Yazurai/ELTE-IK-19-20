@@ -31,6 +31,7 @@ tidy up the code and comment it, but I cannot promise anything.
 
 ## Semester changelog
 
+(Fun fact: the little icons are actually links!)
 - ✔️  = Fully completed
 - [✔️]= Class completed
 - ❎  = Spec available, but solution not yet completed
