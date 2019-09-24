@@ -19,8 +19,8 @@ n2 = 5
 hList = getHead(exampleList, n1)
 tList = getTail(exampleList, n2)
 for elem in hList:
-    print(str(elem))
+    print(elem)
 for elem in tList:
-    print(str(elem))
+    print(elem)
 """
 

@@ -8,8 +8,9 @@ while not inputSuccess:
         inputSuccess = False
         print('Please enter a valid number!')
     if n < 1:
-		inputSuccess = False
-    
+        inputSuccess = False
+
 for i in range(1, n + 1, 1):
-	if n % i == 0:
-		print(str(i))
+    if n % i == 0:
+        print(i)
+
