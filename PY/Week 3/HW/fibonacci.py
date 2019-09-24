@@ -12,7 +12,7 @@ while b < n:
     a = b
     b = c
 if(b == n):
-    print(str(n) + " is a Fibonacci number.")
+    print(n, " is a Fibonacci number.")
 else:
-    print(str(n) + " is not a Fibonacci number.")
+    print(n, " is not a Fibonacci number.")
 

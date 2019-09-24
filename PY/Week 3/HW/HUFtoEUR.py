@@ -8,4 +8,4 @@ while not inputSuccess:
         inputSuccess = False
         print('Please enter a valid number!')
 for n in range(1, n, 1):
-    print(str(n) + "HUF is " + str(n * 0.00299728261) + "EUR.")
+    print(n, "HUF is ", n * 0.00299728261, "EUR.")
