@@ -16,14 +16,13 @@ Feel free to clone the entire repo and study it. If you have any questions just 
 - TBD = To be determined
 - NONE = Nothing to be done for this week
 - WIP = Work in progress
-- DONE = All finished
 
-|   Languague   | HW | Solution | Hand-in | Solution | Status |
-| ------------- | -- | -------- | ------- | -------- | ------ |
-|       C       |-|-|-|-|NONE|
-|     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|-|||Working|
-|      C++      |-|-|-|-|TBD|
-|    Haskell    |-|-|-|-|TBD|
+|   Languague   | HW | Solution | Hand-in | Solution |
+| ------------- | -- | -------- | ------- | -------- |
+|       C       |NONE|NONE|NONE|NONE|
+|     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203/HW)|NONE|NONE|
+|      C++      |TBD|TBD|TBD|TBD|
+|    Haskell    |[spec](https://people.inf.elte.hu/poor_a/fp2.pdf)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/class.hs)|TBD|TBD|
 
 **NOTE**
 
@@ -32,14 +31,15 @@ tidy up the code and comment it, but I cannot promise anything.
 
 ## Semester changelog
 
-- ✔️=Completed
-- ❎=Spec available, but not yet completed
+- ✔️  =Fully completed
+- [✔️]=Class completed
+- ❎  =Spec available, but not yet completed
 
 | WEEK | C | PYTHON | C++ | HASKELL |
 | ---- | - | ------ | --- | ------- |
 | WEEK 1|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|-|-|
 | WEEK 2|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C%2B%2B/WEEK%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%202)|
-| WEEK 3|-|❎|-|-|
+| WEEK 3|-|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203)|-|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%203)|
 | WEEK 4|||||
 | WEEK 5|||||
 | WEEK 6|||||
