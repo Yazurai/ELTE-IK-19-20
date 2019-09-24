@@ -1,6 +1,6 @@
 # ELTE IK 2019-20 Fall semester
 
-This repository will hold all of the code done during practical classes and as homework. The code follows the curriculum of ELTE IK. 
+This repository will hold all of the code done during the fall semester of ELTE IK 2019-20.  
 
 There are 4 programming languages in the first semester.
 - C
@@ -9,6 +9,11 @@ There are 4 programming languages in the first semester.
 - Haskell
 
 Feel free to clone the entire repo and study it. If you have any questions just shoot right away, I will help anyone.
+
+**NOTE**
+
+A large part of the codebase is very rough as I wrote it without giving it too much thought. I will try my best to come back and 
+tidy up the code and comment it, but I cannot promise anything.
 
 ## Weekly changelog
 ### 2019.09.23 - 2019.09.29
@@ -23,11 +28,6 @@ Feel free to clone the entire repo and study it. If you have any questions just 
 |     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203/HW)|NONE|NONE|
 |      C++      |TBD|TBD|TBD|TBD|
 |    Haskell    |[spec](https://people.inf.elte.hu/poor_a/fp2.pdf)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/class.hs)|TBD|TBD|
-
-**NOTE**
-
-A lot of the codes are very rough as I wrote it without giving it too much thought. I will try my best to come back and 
-tidy up the code and comment it, but I cannot promise anything.
 
 ## Semester changelog
 
