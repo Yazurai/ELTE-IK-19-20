@@ -27,7 +27,7 @@ tidy up the code and comment it, but I cannot promise anything.
 |       C       |NONE|NONE|NONE|NONE|
 |     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203/HW)|NONE|NONE|
 |      C++      |TBD|TBD|WIP|WIP|
-|    Haskell    |[spec](https://people.inf.elte.hu/poor_a/fp2.pdf)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/class.hs)|[spec](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/HW.txt)|WIP|
+|    Haskell    |[spec](https://people.inf.elte.hu/poor_a/fp2.pdf)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/class.hs)|[spec](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/HW.txt)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/HW.hs)|
 
 ## Semester changelog
 
