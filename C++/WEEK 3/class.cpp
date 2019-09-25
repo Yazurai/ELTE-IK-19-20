@@ -10,6 +10,7 @@ using namespace std;
 int readNumb(int limit);
 void pedoAlert();
 void rainy();
+void pedoAlertFormal();
 
 int main() {
 
@@ -17,7 +18,7 @@ int main() {
 
 void pedoAlert(){
     cout << "Enter the number of people:";
-    int n = readNumb(MAXN);;
+    int n = readNumb(MAXN);
     int mm[n];
     for(int i = 0; i < n; i++) {
         cout << "Enter the birth year of person " << i+1 << ":";
@@ -31,6 +32,27 @@ void pedoAlert(){
         i++;
     }
 
+    if(pedoDanger){
+        cout << "PEDODANGER!" << endl;
+    } else {
+        cout << "All good." << endl;
+    }
+}
+
+void pedoAlertFormal(){
+    cout << "Enter the number of contestants:";
+    int n = readNumb(MAXN);
+    int mm[MAXN];
+    for(int i = 0; i < n; i++) {
+        cout << "Enter the birth year of person " << i+1 << ":";
+        mm[i] = readNumb(CURRYEAR);
+    }
+
+    int i = 0;
+    while(i<n && CURRYEAR - mm[i] >= 18){
+        i++;
+    }
+    bool pedoDanger = i < n;
     if(pedoDanger){
         cout << "PEDODANGER!" << endl;
     } else {
