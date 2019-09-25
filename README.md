@@ -18,6 +18,8 @@ tidy up the code and comment it, but I cannot promise anything.
 ## Weekly changelog
 ### 2019.09.23 - 2019.09.29
 
+This weekly report will hold all the homeworks and handins for that specific week. I will try to update it daily and as soon as there is 
+
 - TBD = To be determined
 - NONE = Nothing to be done for this week
 - WIP = Work in progress
@@ -26,7 +28,7 @@ tidy up the code and comment it, but I cannot promise anything.
 | ------------- | -- | -------- | ------- | -------- |
 |       C       |NONE|NONE|NONE|NONE|
 |     Python    |[spec](https://docs.google.com/document/d/1Rs6kQr4kPAaEutmy-4yN4HEJYTxUqwuD_DeQil2suwI/edit)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203/HW)|NONE|NONE|
-|      C++      |TBD|TBD|WIP|WIP|
+|      C++      |[ex.1](http://progalap.elte.hu/downloads/gyakorlat/progalap_konst_tomb.pdf)|WIP|WIP|WIP|
 |    Haskell    |[spec](https://people.inf.elte.hu/poor_a/fp2.pdf)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/class.hs)|[spec](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/HW.txt)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%203/HW.hs)|
 
 ## Semester changelog
@@ -42,7 +44,7 @@ tidy up the code and comment it, but I cannot promise anything.
 | ---- | - | -- | --- | -- |
 | WEEK 1|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|X|X|
 | WEEK 2|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C%2B%2B/WEEK%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%202)|
-| WEEK 3|X|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203)|❓|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%203)|
+| WEEK 3|X|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203)|❎|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%203)|
 | WEEK 4|❓|❓|❓|[[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%204)]|
 | WEEK 5|❓|❓|❓|❓|
 | WEEK 6|||||
