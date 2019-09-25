@@ -35,14 +35,14 @@ tidy up the code and comment it, but I cannot promise anything.
 - ✔️  = Fully completed
 - [✔️]= Class completed
 - ❎  = Spec available, but solution not yet completed
-- -   = Nothing for that week
+- X  = Nothing for that week
 - ❓  = Spec not available yet
 
 | WEEK | C | PY | C++ | HS |
 | ---- | - | -- | --- | -- |
-| WEEK 1|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|-|-|
+| WEEK 1|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%201)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%201)|X|X|
 | WEEK 2|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C%2B%2B/WEEK%202)|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%202)|
-| WEEK 3|❓|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203)|❓|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%203)|
+| WEEK 3|X|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/PY/Week%203)|❓|[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%203)|
 | WEEK 4|❓|❓|❓|[[✔️](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HS/WEEK%204)]|
 | WEEK 5|❓|❓|❓|❓|
 | WEEK 6|||||
