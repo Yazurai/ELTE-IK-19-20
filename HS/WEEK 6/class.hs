@@ -1,4 +1,5 @@
 -- 5.GYAKORLAT
+import Data.List
 
 divisors :: Int -> [Int]
 divisors n = [x | x <- [1..n], n `mod` x == 0]
@@ -30,3 +31,8 @@ getStudentIDs name = [cd |(courseName, stds) <- courses, (_,_,cd) <- stds, cours
 days = [31,28,31,30,31,30,31,31,30,31,30,31]
 calendar = [(month, day) | month <- [1..12], day <- [1..days!!(month-1)]]
 
+compress :: String -> [(Int, Char)]
+compress str = [(length(grp), grp!!0) | grp <- group str]
+
+decompress :: [(Int, Char)] -> String
+decompress code = concat [replicate count c |(count, c) <- code]
