@@ -40,6 +40,7 @@ merge _ [] = []
 merge as bs = sort (as ++ bs)
 
 --The more educational solution that is self contained
+--Also has a faster running time than using the basic sort function above
 merge2 :: [Int] -> [Int] -> [Int]
 merge2 [] _ = []
 merge2 _ [] = []
@@ -67,7 +68,27 @@ intercalate2 :: String -> [String] -> String
 intercalate2 s [] = []
 intercalate2 s (c:cs) = c ++ s ++ (intercalate2 s cs)
 
+--the first version gives back an empty string for an empty string
+--This is needed for the pattern matching in the where clause
+
+--I like the pattern matching version a bit more, find it a tad bit more elegant
+--If you wanted to be like the spec, then use head and tail instead of pattern matching(version 2)
 splitOn :: Char -> String -> [String]
-splitOn _ "" = []
+splitOn _ "" = [""]
 splitOn c (t:ts)
-    |c == t = splitOn c 
+    |c == t = "":current:remaining
+    |otherwise = (t:current):remaining
+    where
+        current:remaining = splitOn c ts
+
+splitOn2 :: Char -> String -> [String]
+splitOn2 _ "" = [""]
+splitOn2 c (t:ts)
+    |c == t = "":remaining
+    |otherwise = (t:head remaining):tail remaining
+    where
+        remaining = splitOn c ts
+
+
+csv :: String -> [[String]]
+csv ts = [tokens| line <- lines ts, let tokens = splitOn ',' line]
