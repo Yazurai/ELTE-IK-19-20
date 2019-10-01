@@ -31,6 +31,7 @@ calc (a, '+', b) = a + b
 calc (a, '-', b) = a - b
 calc (a, '*', b) = a * b
 calc (a, '/', b) = a `div` b
+calc _ = 0
 
 isSpace :: Char -> Bool
 isSpace ' ' = True
