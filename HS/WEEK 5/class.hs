@@ -44,7 +44,12 @@ divisors n = [x | x <- [1..n], n `mod` x == 0]
 
 powersOfTwo = [2^x | x <- [0..]]
 
-osc = [if x `mod` 2 == 0 then -x else x | x <- [1..]]
-leibniz = [x | x <- [1,3..]]
+
+leibniz :: Int -> Double
+leibniz n = sum(take n leibnizRec) * 4
+
+leibnizRec = [recip (x) | x <- leibnizSeq]
+leibnizSeq = zipWith (*) (cycle [1,-1]) leibnizBase
+leibnizBase = [x | x <- [1,3..]]
 
 time = [(hour,minute) | hour <- [0..23], minute <- [0..59]]
