@@ -35,3 +35,29 @@ unzip' ((a,b):xs) = (a:as, b:bs)
     where
         (as,bs) = unzip' xs
 
+empty :: String -> [Int]
+empty [] = []
+empty text = [x | x <- [1..lnCount], (lns!!(x-1)) == []]
+    where
+        lnCount = length (lns)
+        lns = lines text
+
+splitAt' :: Int -> [a] -> ([a], [a])
+splitAt' _ [] = ([], [])
+splitAt' 0 xs = ([],xs)
+splitAt' num (x:xs) = ((x:y),ys)
+    where
+        (y,ys) = splitAt' (num-1) xs
+
+nub' :: Eq a => [a] -> [a]
+nub' [] = []
+nub' xs = nub'' xs []
+    where
+        nub'' [] _ = []
+        nub'' (x:xs) founds
+            |x `elem` founds = nub'' xs founds 
+            |otherwise       = x : nub'' xs (x:founds)
+
+concat' :: [[a]] -> [a]
+concat' [] = []
+concat' (x:xs) = x ++ (concat' xs)
