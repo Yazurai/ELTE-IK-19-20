@@ -16,7 +16,7 @@ A large part of the codebase is very rough as I wrote it without giving it too m
 tidy up the code and comment it, but I cannot promise anything.
 
 ## Weekly changelog
-### 2019.09.23 - 2019.09.29
+### 2019.09.30 - 2019.10.06
 
 This weekly report will hold all the homeworks and handins for that specific week. I will try to update it daily and as soon as there is 
 
