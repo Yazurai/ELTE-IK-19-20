@@ -7,17 +7,18 @@ int main() {
     int n;
     cin >> n;
 
-    float temps[n];
+    double H[n];
     for(int i = 0; i < n; i++) {
-        cin >> temps[i];
+        cin >> H[i];
     }
 
-    float maxTemp = 0, maxIndex = 0;
+    double maxTemp = 0;
+    int maxIndex = 0;
     for(int i = 1; i < n-1; i++) {
-        float tempAverage = (temps[i-1] + temps[i+1]) / 2;
-        if(abs(tempAverage - temps[i]) > maxTemp) {
-            maxTemp = abs(tempAverage - temps[i]);
-            maxIndex = i + 1;
+        double wrongness = abs((H[i-1] + H[i+1]) / 2 - H[i]);
+        if(wrongness > maxTemp) {
+            maxTemp = wrongness;
+            maxIndex = i+1;
         }
     }
 
