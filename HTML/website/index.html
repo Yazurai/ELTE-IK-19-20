@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Jaldi' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Jaldi';
+            font-size: 22px;
+            background-color: lemonchiffon;
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            padding: 0;
+            margin: 0;
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+
+        h1 {
+            font-size: 350%;
+            text-align: center;
+            margin: 0;
+            padding-bottom: 150px;
+            padding-top: 150px
+        }
+
+        h2 {
+            font-size: 250%;
+            text-align: center;
+            margin: 0;
+            padding-bottom: 40px;
+            padding-top: 40px
+        }
+
+        h3 {
+            font-size: 150%;
+            text-align: center;
+            margin: 0;
+            padding-left: 15%;
+            padding-right: 15%;
+            padding-bottom: 50px;
+            padding-top: 50px
+        }
+
+        p {
+            font-size: 135%;
+            line-height: 150%;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20%;
+            padding-right: 20%;
+            text-align: center;
+        }
+
+        .code {
+            text-align: center;
+        }
+
+        pre {
+            display: inline-block;
+            font-size: 135%;
+            line-height: 150%;
+            color: crimson;
+            text-align: center;
+            margin: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-radius: 15px;
+            background-color: black
+        }
+
+        ul {
+            font-size: 135%;
+            line-height: 150%;
+            padding-bottom: 20px;
+            display: table;
+            margin: 0 auto;
+        }
+
+        .note {
+            font-size: 85%;
+            line-height: 85%;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 100%;
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 2px solid black;
+        }
+
+        .center-pic {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+        table,
+        th,
+        td {
+            font-size: 110%;
+            line-height: 125%;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: lightblue;">
+        <h1 style="padding-bottom: 20px;">Github crashcourse for university students</h1>
+        <h2 style="padding-top: 0;">Shopping style</h2>
+        <p>This short, no bullshit crash course is aimed at computer science university students on how to use github.
+        </p>
+    </div>
+
+    <div style="background-color: pink;">
+        <h2>Why use github at all?</h2>
+        <ul>
+            <li>Really <b>fast</b> and easily accessible on all of your devices as well as <b>ease of sharing</b></li>
+            <li><b>Easy to organise</b> and oversee your code</li>
+            <li>Ability to <b>revert</b> back any changes</li>
+            <li>An <b>industry standard</b> that will come in handy in the long run</li>
+        </ul>
+    </div>
+
+    <div style="background-color: moccasin;">
+        <h2>Alright, so where do I start?</h2>
+        <p>Head on over to the <a href="https://git-scm.com/downloads">git download site</a> and follow the instructions
+            for your OS.
+            When installing there should be no need to change any of the default settings.</p>
+    </div>
+
+    <div style="background-color: thistle; padding-bottom: 50px;">
+        <h2>So I have git now, where do I start?</h2>
+        <p>Before we start, let's draw a really quick image of how git and github will work in our case.
+            Imagine a store(head), a storage/warehouse(index) and a laboratory(working directory).
+            You are currently working in the laboratory developing something new.
+            <br> We will try to build up this store and operate it.</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Full.png" alt="The full system">
+        </div>
+        <p>To create a this, navigate to the working directory, open a terminal, and type:</p>
+        <div class="code">
+            <pre><b>git init</b></pre>
+        </div>
+        <p class="note">Note: A git repository is essentially the hidden .git/ map in your working directory. To delete
+            the repository, just delete that folder.</p>
+        <p>With this, our barebone store looks like this.
+            <div class="imgbox">
+                <img class="center-pic" src="images/Initial.png" alt="The Initial barebone local repo">
+            </div>
+    </div>
+
+    <div style="background-color: palegreen; padding-bottom: 50px;">
+        <h2>So I have developed something, how do I "save"?</h2>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Developed.png" alt="The state when we have made some local changes">
+        </div>
+        <p>To transfer your things to the index(storage), you will need to add them to it with the following command:
+            <div class="code">
+                <pre><b>git add *</b></pre>
+            </div>
+            <p class="note">Note: You can use the learnt formatting from computer systems to specify which items to add
+                to the staging area.
+                <br>In this case, * means that we add everything in the working directory to the index(storage).</p>
+            <div class="imgbox">
+                <img class="center-pic" src="images/Added.png" alt="The State after adding">
+            </div>
+            <p>Once you have fully stocked up the index(storage), we need to create a commit(inventory) of it, so we
+                know what to put out into the actual head(store).
+                These commits(inventories) will all get saved, and you can easily access information even about past
+                commits(inventories).</p>
+            <div class="code">
+                <pre><b>git commit -m "Commit message"</b></pre>
+            </div>
+            <div class="imgbox">
+                <img class="center-pic" src="images/Committed.png" alt="The State after committing">
+            </div>
+    </div>
+
+    <div style="background-color:khaki; padding-bottom: 50px;">
+        <h2>Great, what about the head(store)?</h2>
+        <p>Head over to <a href="https://github.com/">github</a> and register for an account and create a repository.
+        </p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Remote created.png"
+                alt="The state after the remote repo has been created">
+        </div>
+        <p>With this we have created the barebones of the head(store). But there is no connection between the
+            head(store) and our index(warehouse).
+            <br>We do this with the following command:</p>
+        <div class="code">
+            <pre><b>git remote add origin "git repository link"</b></pre>
+        </div>
+        <p>Where you should replace "git repository link" with the url of your github repo.</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Remote connected.png"
+                alt="The state after connecting the remote to the local repo">
+        </div>
+        <hr />
+        <p>Now that the two are connected, we can finally push our commit(inventory) to the head(store) for display.</p>
+        <div class="code">
+            <pre><b>git push origin master</b></pre>
+        </div>
+        <p>This is the formal full version, you could also just use git push normally.</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Pushed.png" alt="The state after pushing to the remote">
+        </div>
+    </div>
+
+    <h3>And with that, you have published your first commit to your github repo. You can view your code online at your
+        repo's github page.</h3>
+
+    <div style="background-color: salmon; padding-bottom: 50px;">
+        <h2>But what happens when I go home and want to use the code there?</h2>
+        <p>To create a second index(warehouse), you could use git init on your home PC.
+            However, that repository would be empty. Instead, to create one from the head(store), use:</p>
+        <div class="code">
+            <pre><b>git clone "git repository url"</b></pre>
+        </div>
+        <div class="imgbox">
+            <img class="center-pic" src="images/Cloned.png" alt="The state after cloning to a new device">
+        </div>
+        <p>You can now use the working directory as usual.</p>
+
+        <hr>
+        <p>Also note that you only need to use clone for the initial creation.</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/PrePull.png" alt="The state before -git pull-">
+        </div>
+        <p>Afterwards, whenever you log into a new location, to update all of the files to the latest commit(inventory),
+            use:</p>
+        <div class="code">
+            <pre><b>git pull</b></pre>
+        </div>
+        <div class="imgbox">
+            <img class="center-pic" src="images/PostPull.png" alt="The state after -git pull-">
+        </div>
+    </div>
+
+    <div style="background-color: silver; padding-bottom: 50px;">
+        <h2>Can I do something about all the junk files in my project?</h2>
+        <p>A lot of times, there is no need to sync some junk files. For example IDE generated files, object and
+            executable files etc.
+            You can create a file that tells git to ignore certain files when you add files to the index.
+            <br />This is the <b>.gitignore.</b> To create one, use the following command in the workign folder:</p>
+        <div class="code">
+            <pre><b>touch .gitignore</b></pre>
+        </div>
+        <p>You can type filenames in this file that you want to ignore. You can use all the formatting learned during
+            computer systems.
+            <br>An example to ignore all object and executable files would be:
+        </p>
+        <div class="code">
+            <pre style="color: white"><b>*.o
+                    <br>*.exe</b></pre>
+        </div>
+        <p>Before "git add *"</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/PreIgnore.png" alt="The state before adding all with gitignore">
+        </div>
+        <p>After "git add *"</p>
+        <div class="imgbox">
+            <img class="center-pic" src="images/PostIgnore.png" alt="he state after adding all with gitignore">
+        </div>
+    </div>
+
+    <div style="background-color: violet;">
+        <h1>Now you should be able to utilize github to store all of your university codes.
+            <br />Congratulations!</h1>
+    </div>
+
+    <div style="background-color: seagreen; padding-bottom: 50px;">
+        <h2>List of commands in the order of the pipeline</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <th>Initializing</th>
+            </tr>
+            <tr>
+                <td>Git init</td>
+                <td>Initializes an empty git in the working directory.</td>
+                <td>Use at the very beginning to create a new git repo from your existing code.</td>
+            </tr>
+            <tr>
+                <td>Git clone "github repo url"</td>
+                <td>Clones a github from a remote path.</td>
+                <td>Use this when you first want to get your project to a new device.</td>
+            </tr>
+            <tr>
+                <td>Git pull</td>
+                <td>Fetches and then merges the current working branch.</td>
+                <td>Use this to get the latest commit/update when you log into a previously used device.</td>
+            </tr>
+            <tr>
+                <th>Adding and removing</th>
+            </tr>
+            <tr>
+                <td>Git status</td>
+                <td>Writes out the status of the index (tracked files, changed but untracked files).</td>
+                <td>Use this to ensure you have the right items in the index.</td>
+            </tr>
+            <tr>
+                <td>Git add "filename"</td>
+                <td>Adds the item(s) to the index.</td>
+                <td>Use this to specify which files the next commit should track.</td>
+            </tr>
+            <tr>
+                <td>Git rm "filename"</td>
+                <td>Removes the item(s) to the index. (use --cached to remove items already in the index.)</td>
+                <td>Use this to delete a file that will be tracked in the next commit.</td>
+            </tr>
+            <tr>
+                <th>Committing and synchronizing</th>
+            </tr>
+            <tr>
+                <td>Git commit -m "Commit message"</td>
+                <td>Creates a new commit from the current state of the index.</td>
+                <td>Use this to create a "save point" every time you have made some changes. Don't forget to add your
+                    files.</td>
+            </tr>
+            <tr>
+                <td>Git remote add origin "github repo url"</td>
+                <td>Connects the remote to the local repo.</td>
+                <td>Use this to create the initial connection between the github repo and your local. Only need to do
+                    this once.</td>
+            </tr>
+            <tr>
+                <td>Git push</td>
+                <td>Pushes your current branch(no need to worry about this for now) to your remote repo.</td>
+                <td>Use this to "upload" all of your changes online. Don't forget to push when you finish your
+                    tutorials.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="background-color: black; padding-top: 30px;">
+        <p style="color: white">Made by: Tran Bach Khoa (SAOF2T)</p>
+    </div>
+</body>
+
+</html>
