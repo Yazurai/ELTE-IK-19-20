@@ -115,121 +115,126 @@
 
 <body>
     <div style="background-color: lightblue;">
-        <h1 style="padding-bottom: 20px;">Github crashcourse for university students</h1>
-        <h2 style="padding-top: 0;">Shopping style</h2>
-        <p>This short, no bullshit crash course is aimed at computer science university students on how to use github.
+        <h1 style="padding-bottom: 20px;">Github gyorstalpaló egyetemistáknak</h1>
+        <h2 style="padding-top: 0;">Avagy hogyan csináljunk egy bolt modellt</h2>
+        <p>Ez egy gyors és rövid áttekintője a git és githubnak leginkabb egyetemistáknak.
         </p>
     </div>
 
     <div style="background-color: pink;">
-        <h2>Why use github at all?</h2>
+        <h2>Miért használjunk git/githubot egyáltalán?</h2>
         <ul>
-            <li>Really <b>fast</b> and easily accessible on all of your devices as well as <b>ease of sharing</b></li>
-            <li><b>Easy to organise</b> and oversee your code</li>
-            <li>Ability to <b>revert</b> back any changes</li>
-            <li>An <b>industry standard</b> that will come in handy in the long run</li>
+            <li>Nagyon <b>gyors</b> és könnyű elérhetőség az összes eszközünkön és <b>a programkód könnyű
+                    megosztása.</b></li>
+            <li><b>Könnyű rendszerezés</b> és átláthatóság.</li>
+            <li>Képesek vagyunk <b>visszaállítani</b> a kódbázisunkat egy múltba lévő állapotba.</li>
+            <li>Egy <b>ipari standard</b> ami a későbbiekben (pl. munka gyakorlatnál) hasznos lesz.</li>
         </ul>
     </div>
 
     <div style="background-color: moccasin;">
-        <h2>Alright, so where do I start?</h2>
-        <p>Head on over to the <a href="https://git-scm.com/downloads">git download site</a> and follow the instructions
-            for your OS.
-            When installing there should be no need to change any of the default settings.</p>
+        <h2>Szóval hol kezdjünk?</h2>
+        <p>Töltsd le a gitet a <a href="https://git-scm.com/downloads">git letöltő oldaláról</a> a neked megfelelő
+            operációs rendszerre.
+            Amikor futtatod a telepítőt akkor nem nagyon kell változtatnod semmit az alapbeállításokon.</p>
     </div>
 
     <div style="background-color: thistle; padding-bottom: 50px;">
-        <h2>So I have git now, where do I start?</h2>
-        <p>Before we start, let's draw a really quick image of how git and github will work in our case.
-            Imagine a store(head), a storage/warehouse(index) and a laboratory(working directory).
-            You are currently working in the laboratory developing something new.
-            <br> We will try to build up this store and operate it.</p>
+        <h2>Szóval van gitünk, de most hogyan?</h2>
+        <p>Mielőtt belekezdenénk, rajzoljuk fel, hogy nagyvonalakban hogyan lehet elképzelni ezt a gitet.
+            Képzeljünk el egy üzletet, ami 3 részből áll. A bolti rész(head/remote), a raktár(index)
+            és a gyár(local working directory). Ezt az egészet repositorynak hívják.
+            <br> Na ezt fogjuk megpróbálni felépíteni elemenként.</p>
         <div class="imgbox">
             <img class="center-pic" src="images/Full.png" alt="The full system">
         </div>
-        <p>To create a this, navigate to the working directory, open a terminal, and type:</p>
+        <p>A legelső lépés a termékek legyártása lesz. Navigáljunk egy kiválasztott mappába,
+            nyissunk meg egy terminált és írjuk be az alábbi parancsot:</p>
         <div class="code">
             <pre><b>git init</b></pre>
         </div>
-        <p class="note">Note: A git repository is essentially the hidden .git/ map in your working directory. To delete
-            the repository, just delete that folder.</p>
-        <p>With this, our barebone store looks like this.</p>
+        <p class="note">Megjegyzés: A git repository az gyakorlatilag egy rejtett mappában van(.git). Ha esetleg
+            ki szeretnénk törölni a repositoryt, elég csak a rejtett mappát kitörölni és kész.
+        </p>
+        <p>És ezzel meg is van a git repositorynk alapja.</p>
         <div class="imgbox">
             <img class="center-pic" src="images/Initial.png" alt="The Initial barebone local repo">
         </div>
     </div>
 
     <div style="background-color: palegreen; padding-bottom: 50px;">
-        <h2>So I have developed something, how do I "save"?</h2>
+        <h2>Csináltunk pár új terméket(kódfájlt), hogyan raktározzuk el őket?</h2>
         <div class="imgbox">
             <img class="center-pic" src="images/Developed.png" alt="The state when we have made some local changes">
         </div>
-        <p>To transfer your things to the index(storage), you will need to add them to it with the following command:
+        <p>Ahhoz, hogy hozzáadjuk a termékeinket(kódfájl) a raktárhoz(index), ahhoz használjuk:
             <div class="code">
                 <pre><b>git add *</b></pre>
             </div>
-            <p class="note">Note: You can use the learnt formatting from computer systems to specify which items to add
-                to the staging area.
-                <br>In this case, * means that we add everything in the working directory to the index(storage).</p>
+            <p class="note">Megjegyzés: Itt lehet használni azokat a formázásokat amiket tanultunk számítógépes
+                rendszer órákon.
+                <br>Ebben az esetben, a * azt jelenti hogy mindent hozzáadunk a raktárhoz(még az almappákat is). Ugyancsak lehet használni '.'-t is ugyanerre.</p>
             <div class="imgbox">
                 <img class="center-pic" src="images/Added.png" alt="The State after adding">
             </div>
-            <p>Once you have fully stocked up the index(storage), we need to create a commit(inventory) of it, so we
-                know what to put out into the actual head(store).
-                These commits(inventories) will all get saved, and you can easily access information even about past
-                commits(inventories).</p>
+            <p>Most hogy teljesen feltöltöttük a raktárat(index), akarunk egy nyilvántartást/leltárt(commits) tartani róla.
+                Mikor pontosan milyen termékek(fájlok) voltak a raktárban(index), ki mikor fért hozzájuk és változtatott meg valamit.
+                <br/>Ahhoz, hogy egy újabb nyilvántartást/mentéspontot(commit) hozzunk létre, az alábbit kell használni:</p>
             <div class="code">
                 <pre><b>git commit -m "Commit message"</b></pre>
             </div>
             <div class="imgbox">
                 <img class="center-pic" src="images/Committed.png" alt="The State after committing">
             </div>
+            <p>Az üzletben(repository) minden egyes múltbeli mentéspont(commit) el van tárolva és bármelyikre visszaállíthatjuk az üzletet.</p>
     </div>
 
     <div style="background-color:khaki; padding-bottom: 50px;">
-        <h2>Great, what about the head(store)?</h2>
-        <p>Head over to <a href="https://github.com/">github</a> and register for an account and create a repository.
+        <h2>Csodás, de hol van az üzlet(remote/head)?</h2>
+        <p>Először regisztráljunk fel a <a href="https://github.com/">githubra</a> és csináljunk egy új repositoryt ott.
         </p>
         <div class="imgbox">
             <img class="center-pic" src="images/Remote created.png"
                 alt="The state after the remote repo has been created">
         </div>
-        <p>With this we have created the barebones of the head(store). But there is no connection between the
-            head(store) and our index(warehouse).
-            <br>We do this with the following command:</p>
+        <p>Ezzel létrejött egy üzlet(remote/head). Viszont még teljesen üres. Ahhoz, hogy fel tudjuk
+            tölteni a kirakatot(remote/head) a raktárban(index) lévő dolgokkal, össze kell kapcsolni a két teret.
+            <br>Ezt megtehetjük a következő paranccsal:</p>
         <div class="code">
             <pre><b>git remote add origin "git repository link"</b></pre>
         </div>
-        <p>Where you should replace "git repository link" with the url of your github repo.</p>
+        <p>Ahol helyettesítsük be a "git repository link"-t a github repository linkjével.</p>
         <div class="imgbox">
             <img class="center-pic" src="images/Remote connected.png"
                 alt="The state after connecting the remote to the local repo">
         </div>
         <hr />
-        <p>Now that the two are connected, we can finally push our commit(inventory) to the head(store) for display.</p>
+        <p>Most, hogy összekapcsoltuk a kettőt, feltölthetjük az üzletet(remote/head) a legutóbbi nyilvántartás(commit) alapján.
+            Erre használjuk először ezt a parancsot:</p>
         <div class="code">
             <pre><b>git push origin master</b></pre>
         </div>
-        <p>This is the formal full version, you could also just use git push normally.</p>
+        <p>A továbbiakban használhatjuk szimplán a "git push"-t.</p>
         <div class="imgbox">
             <img class="center-pic" src="images/Pushed.png" alt="The state after pushing to the remote">
         </div>
     </div>
 
-    <h3>And with that, you have published your first commit to your github repo. You can view your code online at your
-        repo's github page.</h3>
+    <h3>És ezzel, sikeresen feltöltöttük és megnyitottuk a publiknak a legelső üzletünket(remote repository).</h3>
 
     <div style="background-color: salmon; padding-bottom: 50px;">
-        <h2>But what happens when I go home and want to use the code there?</h2>
-        <p>To create a second index(warehouse), you could use git init on your home PC.
-            However, that repository would be empty. Instead, to create one from the head(store), use:</p>
+        <h2>De mi történik akkor, ha hazamegyünk és onnan is akarnánk dolgozni?</h2>
+        <p>Ezt az esetet képzelhetjük úgy, hogy megy a business és meg akarunk nyitni egy új raktárat és gyárat.
+            Erre bár használhatunk "git init"-t, de akkor az új raktár+gyár(local repository) üres lesz.
+            <br/> Jobb lenne ha az új raktár+gyár(local repository) a már az üzletben levő termékekre(fájlok) épülne.
+            <br/>Ezt megtehetjük ezzel:</p>
         <div class="code">
             <pre><b>git clone "git repository url"</b></pre>
         </div>
         <div class="imgbox">
             <img class="center-pic" src="images/Cloned.png" alt="The state after cloning to a new device">
         </div>
-        <p>You can now use the working directory as usual.</p>
+        <p>Ezután használhatjuk a local repositoryt normális módon.</p>
 
         <hr>
         <p>Also note that you only need to use clone for the initial creation.</p>
