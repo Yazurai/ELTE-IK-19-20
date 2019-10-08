@@ -1,4 +1,5 @@
 import Data.Char
+import Data.List
 
 morseTab :: [(Char, String)]
 morseTab =
@@ -38,6 +39,14 @@ getShortestCodeLength codes = foldl (\acc (c,cd) -> if acc > (length cd) then le
 
 getPossiblePrefixes :: [(Char,String)] -> String -> [(Char,String)]
 getPossiblePrefixes _ "" = []
-getPossiblePrefixes codes (x:xs)
-  |
-  |otherwise = getPossiblePrefixes
+getPossiblePrefixes codes fullCd = filter (\(c,cd) -> compareStrings cd fullCd) codes
+
+compareStrings :: String -> String -> Bool
+compareStrings [] _ = True
+compareStrings _ [] = False
+compareStrings (x:xs) (y:ys) = (x == y) && (compareStrings xs ys)
+
+decodeString :: String -> [String]
+decodeString code = foldr (++) [] (map (\(c,cd) -> if (length cd) == (length code) then [[c]] else map (c:) (decodeString (drop (length cd) code))) possiblePrefix)
+  where
+    possiblePrefix = getPossiblePrefixes morseTab code
