@@ -11,8 +11,13 @@ primes = [x | x <- [1..], isPrime x]
 
 dominoes = [(a,b) | a <- [0..6], b <- [0..6], a >= b]
 
---Ez nincs a korrekt formatumban
-allPairs = [(a,b) | a <- [0..], b <- [0..]]
+allPairs = getPairs' 0 0
+        
+getPairs' :: Int -> Int -> [(Int, Int)]
+getPairs' n curr 
+    |curr == n = (n-curr,curr):(getPairs' (n+1) 0)
+    |otherwise = (n-curr,curr):(getPairs' n (curr+1))  
+
 
 alphabet = zip [0..25] ['a'..'z']
 
