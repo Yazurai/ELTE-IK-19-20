@@ -28,6 +28,4 @@ int main(){
     for(int i = 0; i < indexes.size(); i++){
         cout << " " << indexes[i];
     }
-
-    return 0;
 }

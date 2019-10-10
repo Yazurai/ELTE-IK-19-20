@@ -22,6 +22,5 @@ int main(){
     }
     int index = i < CARD_COUNT-1 ? i+1 : 0;
 
-    cout << index);
-    return 0;
+    cout << index;
 }
