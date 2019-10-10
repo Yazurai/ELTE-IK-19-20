@@ -23,18 +23,27 @@ bool cmpArray(int elemCount, int *a, int *b) {
     return true;
 }
 
-char* concatString(int aLength, char *a, int bLength, char *b, char *c){
+void concatString(int aLength, char *a, int bLength, char *b, char *c){
+    aLength--; bLength--; //get rid of the '\0' at the end of both
     for(int i = 0; i < aLength; i++){
         c[i] = a[i];
     }
     for(int i = 0; i < bLength; i++){
         c[aLength + i] = b[i];
     }
-    return c;
+    c[aLength+bLength] = '\0';
+}
+
+void createCopy(int *origin,int **copy){
+    for(int i = 0; i < 5; i++){
+        *copy = origin;
+        copy++, origin++;
+    }
 }
 
 int main() {
     printf("%d \n", getLength("abcdef"));
+
     int a[5] = {1,2,3,4,5};
     int b[5] = {1,2,3,4,5};
     if(cmpArray(5, a, b)){
@@ -44,12 +53,18 @@ int main() {
     }
 
     char c[] = "hello ";
+    int sizeC = sizeof(c)/sizeof(c[0]);
     char d[] = "world!";
-    char *e = malloc(sizeof(char) * 13);
-    e = concatString(6,c,6,d,e);
+    int sizeD = sizeof(d)/sizeof(d[0]);
+    char e[sizeC + sizeD - 1];
+    concatString(sizeC,c,sizeD,d,e);
+    printf("%d\n", sizeof(e));
     printf("%s\n", e);
-    free(e);
 
-    char blabla[]= "alma";
-    printf("%d", (int)(sizeof(blabla)/sizeof(char)));
+    int f[5] = {1,2,3,4,5};
+    int *cpy[5];
+    createCopy(f, cpy);
+    printf("origin: %d, cpy: %d\n", f[0], *cpy[0]);
+    f[0] = 10;
+    printf("origin: %d, cpy: %d\n", f[0], *cpy[0]);
 }
