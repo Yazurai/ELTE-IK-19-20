@@ -31,6 +31,8 @@ This weekly report will hold all the homeworks and handins for that specific wee
 |      C++      |Class exercises|[sol](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/C%2B%2B/WEEK%205)|HW to [canvas](https://canvas.elte.hu/). Individual,head to [biro](https://biro.inf.elte.hu) for yours|[spec(only mine)](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/C%2B%2B/HANDIN%202/main.cpp)|
 |    Haskell    |NONE|NONE|[spec](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%205/hw.txt) to [bead](https://bead.inf.elte.hu/home)|[sol](https://github.com/Yazurai/ELTE-IK-19-20/blob/master/HS/WEEK%205/hw.hs)|
 
+[!!!HTML HANDIN!!!](https://github.com/Yazurai/ELTE-IK-19-20/tree/master/HTML/website)
+
 ## Semester changelog
 
 (Fun fact: the little icons are actually links!)
