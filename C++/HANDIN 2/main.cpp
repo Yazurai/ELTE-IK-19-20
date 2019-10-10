@@ -10,38 +10,35 @@ int main(){
     int n;
     string name;
     cin >> n >> name;
-    cin.ignore();
+    cin.ignore(); //ignore '\n' for getline
 
     //Filling up the data structure
-    vector <string> names;
+    vector <string> days;
     for(int i = 0; i < n; i++){
         string newLine;
         getline(cin, newLine);
-        names.push_back(newLine);
+        days.push_back(newLine);
     }
 
     //Calculating the results
-    int dayCount = 0;
-    vector <int> days;
+    vector <int> foundDays;
     for(int i = 0; i < n; i++){
         bool found = false;
-        stringstream ss(names[i]);
-        string s;
-        while(getline(ss, s, ',')){
-            if(s.compare(name) == 0){
+        stringstream ns(days[i]);
+        string n;
+        while(getline(ns, n, ',')){
+            if(n.compare(name) == 0){
                 found = true;
             }
         }
         if(found){
-            days.push_back(i+1);
-            dayCount++;
+            foundDays.push_back(i+1);
         }
     }
 
     //Printing the results
-    cout << dayCount;
-    for(int i = 0; i < dayCount; i++){
-        cout << " " << days[i];
+    cout << foundDays.size();
+    for(int i = 0; i < foundDays.size(); i++){
+        cout << " " << foundDays[i];
     }
-    return 0;
 }
