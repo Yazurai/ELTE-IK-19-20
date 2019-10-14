@@ -82,13 +82,12 @@ splitOn c (t:ts)
         current:remaining = splitOn c ts
 
 splitOn2 :: Char -> String -> [String]
-splitOn2 _ "" = [""]
+splitOn2 _ "" = []
 splitOn2 c (t:ts)
     |c == t = "":remaining
     |otherwise = (t:head remaining):tail remaining
     where
         remaining = splitOn c ts
-
 
 csv :: String -> [[String]]
 csv ts = [tokens| line <- lines ts, let tokens = splitOn ',' line]

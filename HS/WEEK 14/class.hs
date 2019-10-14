@@ -38,6 +38,7 @@ delete username (LoggedIn adminName Admin) ((name, pass, priv):db)
     |name == username = delete username (LoggedIn adminName Admin) db
     |otherwise        = (name, pass, priv) : (delete username (LoggedIn adminName Admin) db)
 delete _ _ db = db
+delete _ _ _ = []
 
 users :: Db -> [String]
 users db = map (\(name, _, _) -> name) db

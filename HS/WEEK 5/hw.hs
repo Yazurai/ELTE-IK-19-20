@@ -20,4 +20,9 @@ isValid (x:xs) = startCorrect && partCorrect && reserveCorrect
         startCorrect   = isIdentifierStart x
         partCorrect    = (length $ filter isIdentifierPart xs) == length xs
         reserveCorrect = not (isReserved (x:xs))
+
+--There are multiple versions for partCorrect(brackets might be needed)
+--partCorrect    = (length $ filter isIdentifierPart xs) == length xs
+--partCorrect    = length [x | x <- xs, isIdentifierPart x] == length xs
+--partCorrect    = all isIdentifierPart xs
         

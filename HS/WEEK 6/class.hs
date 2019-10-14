@@ -18,7 +18,6 @@ getPairs' n curr
     |curr == n = (n-curr,curr):(getPairs' (n+1) 0)
     |otherwise = (n-curr,curr):(getPairs' n (curr+1))  
 
-
 alphabet = zip [0..25] ['a'..'z']
 
 everyThird = [c | (n,c) <- alphabet, n `mod` 3 == 2]
