@@ -46,7 +46,26 @@ compareStrings [] _ = True
 compareStrings _ [] = False
 compareStrings (x:xs) (y:ys) = (x == y) && (compareStrings xs ys)
 
+--The first one needs the "if (length cd) == (length code) then [[c]] else" part as the issue with the second version is that when [""] is returned,
+--the "map (c:) (decodeString (drop (length cd) code)))" doesn't recognise it as an empty array containing and empty string and such
+--simply skips the base case and thus not generating anything from the recursion.
 decodeString :: String -> [String]
 decodeString code = foldr (++) [] (map (\(c,cd) -> if (length cd) == (length code) then [[c]] else map (c:) (decodeString (drop (length cd) code))) possiblePrefix)
   where
     possiblePrefix = getPossiblePrefixes morseTab code
+
+decodeString' :: String -> [String]
+decodeString' [] = [""]
+decodeString' code = foldr (++) [] (map (\(c,cd) -> map (c:) (decodeString (drop (length cd) code))) possiblePrefix)
+  where
+    possiblePrefix = getPossiblePrefixes morseTab code
+
+decodeString'' :: String -> [String]
+decodeString'' [] = [""]
+decodeString'' code = foldr (++) [] (map (\(c,cd) -> map (c:) (decodeString (drop (length cd) code))) possiblePrefix)
+  where
+    possiblePrefix = getPossiblePrefixes morseTab code
+
+test :: String -> [String]
+test [] = [""]
+test (x:xs) = map (x:) (test xs)
