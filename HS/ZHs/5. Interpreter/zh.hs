@@ -50,8 +50,9 @@ run (memory,('-':cs, ds)) = (modifyPtr (+(-1)) memory, (cs,ds))
 run (memory,('.':cs, ds)) = (memory, (cs,ds++[chr(readPtr memory)] ))
 run (memory,('[':cs, ds)) = state
     where
-        (loopBody,rnd) = getLoopBody ds
-        state = loopUntil ((readPtr memory) == 0) run 1 (memory,(loopBody, ds))
+        (loopBody,rnd) = getLoopBody cs
+        state = loopUntil (\(m,_) -> readPtr m == 0) run 1 (memory,(loopBody, ds))
+run (memory,(']':cs, ds)) = state
 run (m, c)                = (m, c)
 
 interpret :: String -> String
