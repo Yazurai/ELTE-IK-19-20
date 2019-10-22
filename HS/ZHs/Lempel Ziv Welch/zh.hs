@@ -18,4 +18,20 @@ munch dic xs = (i,x,rmd)
 
 append :: [String] -> String -> String -> [String]
 append dic _ "" = dic
-append dic x (y:ys) = 
+append dic x (y:ys) = dic ++ [x ++ [y]]
+
+encode :: [String] -> String -> [Int]
+encode dic [] = []
+encode dic xs = i:encode newDic rmd
+    where
+        (i,x,rmd) = munch dic xs
+        newDic = append dic x rmd
+
+compress :: String -> String
+compress xs = map (chr) encoded
+    where
+        encoded = encode dictionary xs
+
+decode :: [String] -> [Int] -> String
+decode dic [] = []
+decode dic [x] = dic!!x
