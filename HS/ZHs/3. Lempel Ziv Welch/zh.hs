@@ -35,3 +35,15 @@ compress xs = map (chr) encoded
 decode :: [String] -> [Int] -> String
 decode dic [] = []
 decode dic [x] = dic!!x
+decode dic (x:y:xs)
+    |y < length dic = dic!!x ++ (decode normalNewDic (y:xs))
+    |otherwise      = dic!!x ++ (decode xNewDic (y:xs))
+        where
+            normalNewDic = append dic (dic!!x) (dic!!y)
+            xNewDic      = append dic (dic!!x) (dic!!x)
+
+decompress :: String -> String
+decompress xs = decoded
+    where
+        converted = map (ord) xs
+        decoded = decode dictionary converted
