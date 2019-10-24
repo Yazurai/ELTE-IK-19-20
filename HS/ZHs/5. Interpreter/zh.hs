@@ -45,8 +45,8 @@ loopUntil check f n x
         newElem = (iterate f x)!!n
 
 --Doesnt work for nested loops.
---The issue seems to be with not being able to predetermine the loop length for the loopuntil function
---Tried to do it with countlength but that still doesnt solve the issue 
+--The issue is strongly suspected to be that getLoopBody would not work with an infinite list 
+--Could be solved by introducing a loop end character
 run :: (([Int],[Int]),(String,String)) -> (([Int],[Int]),(String,String))
 run (memory,('>':cs, ds)) = (ptrInc memory, (cs,ds))
 run (memory,('<':cs, ds)) = (ptrDec memory, (cs,ds))
