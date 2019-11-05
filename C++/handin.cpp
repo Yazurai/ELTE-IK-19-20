@@ -5,6 +5,8 @@
 
 using namespace std;
 
+static bool seeData[MAXN][MAXN] = {0};
+
 int main() {
     ios_base::sync_with_stdio(false);
     int N = 0;
@@ -18,40 +20,72 @@ int main() {
     for(int i = 0; i < N; i++) {
         if(heights[i] != 0) {
             int counter = 0;
-            for(int j = 0; j < N; j++) {
-                if(j != i) {
+            int currHighest = 0;
+            for(int j = 0; j < i; j++) {
+                if(seeData[j][i]){
+                    counter++;
+                }
+            }
+            currHighest = 0;
+            for(int j = i+1; j < N; j++) {
+                if(currHighest <= heights[i]) {
                     bool canSee = true;
-                    double heightDiff = abs(heights[i] - heights[j]);
-                    double diff = abs(i-j);
-                    double avgDiff = heightDiff / diff;
-                    if(j < i){
-                        for(int k = j; k < i-1; k++){
-                            if(heights[k] > heights[j] + abs(k-j) * avgDiff){
+                    double avgDiff = abs(heights[i] - heights[j]) / abs(i-j);
+                    if(j < i) {
+                        for(int k = j; k < i-1; k++) {
+                            if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
                                 canSee = false;
                                 break;
                             }
                         }
                     } else {
-                        for(int k = i+1; k < j; k++){
-                            if(heights[k] > heights[j] + abs(k-j) * avgDiff){
-                                 canSee = false;
-                                 break;
+                        for(int k = i+1; k < j; k++) {
+                            if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
+                                canSee = false;
+                                break;
                             }
                         }
                     }
+                    currHighest = heights[j];
                     if(canSee){
+                        seeData[i][j] = true;
                         counter++;
+                    }
+                } else {
+                    if(heights[j] > currHighest) {
+                        bool canSee = true;
+                        double avgDiff = abs(heights[i] - heights[j]) / abs(i-j);
+                        if(j < i) {
+                            for(int k = j; k < i-1; k++) {
+                                if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
+                                    canSee = false;
+                                    break;
+                                }
+                            }
+                        } else {
+                            for(int k = i+1; k < j; k++) {
+                                if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
+                                    canSee = false;
+                                    break;
+                                }
+                            }
+                        }
+                        currHighest = heights[j];
+                        if(canSee){
+                            seeData[i][j] = true;
+                            counter++;
+                        }
                     }
                 }
             }
-            if(counter > maximum){
+            if(counter > maximum) {
                 maximum = counter;
                 index = i;
             }
         }
     }
 
-    if(maximum == -1){
+    if(maximum == -1) {
         cout << "0";
     } else {
         cout << index + 1;
