@@ -38,7 +38,7 @@ has :: BitVector -> Int -> Bool
 has (BV xs) x = x `elem` xs
 
 bloomQuery :: BloomFilter -> [Int] -> Bool
-bloomQuery (BLF v) xs = foldl (\acc x -> v `has` x && acc) True xs
+bloomQuery (BLF v) xs = foldl (\acc x -> v `has` x && acc) True (hashes xs)
 
 normalize :: String -> [Int]
 normalize xs = map (ord.toUpper) $ filter (isLetter) xs
@@ -46,4 +46,8 @@ normalize xs = map (ord.toUpper) $ filter (isLetter) xs
 wordFilter :: [String] -> BloomFilter
 wordFilter xs = foldl (\acc x -> bloomAdd acc (normalize x)) (toBloom empty) xs
 
-
+spellCheck :: BloomFilter -> String -> [Int]
+spellCheck blf xs = [ i | (w,i) <- zip wordParts indexList, not (bloomQuery blf (normalize w))]
+  where
+    wordParts = words xs
+    indexList = [0..((length wordParts)-1)]
