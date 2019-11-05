@@ -49,6 +49,9 @@ splitAt' n (x:xs) = ((x:y),ys)
     where
         (y,ys) = splitAt' (n-1) xs
 
+splitAt'' :: Int -> [a] -> ([a], [a])
+splitAt'' n = foldl (\(first,rem) x -> if length first < n then (first++[x],rem) else (first,rem++[x])) ([],[])
+
 nub' :: Eq a => [a] -> [a]
 nub' [] = []
 nub' xs = nub'' xs []
