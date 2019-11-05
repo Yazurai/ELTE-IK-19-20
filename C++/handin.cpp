@@ -5,7 +5,7 @@
 
 using namespace std;
 
-static bool seeData[MAXN][MAXN] = {0};
+static bool seeData[1000][1000] = {0};
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -28,7 +28,7 @@ int main() {
             }
             currHighest = 0;
             for(int j = i+1; j < N; j++) {
-                if(currHighest <= heights[i]) {
+                if(currHighest <= heights[i] || (currHighest <= heights[i] && heights[j] > currHighest)) {
                     bool canSee = true;
                     double avgDiff = abs(heights[i] - heights[j]) / abs(i-j);
                     if(j < i) {
@@ -51,31 +51,6 @@ int main() {
                         seeData[i][j] = true;
                         counter++;
                     }
-                } else {
-                    if(heights[j] > currHighest) {
-                        bool canSee = true;
-                        double avgDiff = abs(heights[i] - heights[j]) / abs(i-j);
-                        if(j < i) {
-                            for(int k = j; k < i-1; k++) {
-                                if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
-                                    canSee = false;
-                                    break;
-                                }
-                            }
-                        } else {
-                            for(int k = i+1; k < j; k++) {
-                                if(heights[k] > heights[j] + abs(k-j) * avgDiff) {
-                                    canSee = false;
-                                    break;
-                                }
-                            }
-                        }
-                        currHighest = heights[j];
-                        if(canSee){
-                            seeData[i][j] = true;
-                            counter++;
-                        }
-                    }
                 }
             }
             if(counter > maximum) {
@@ -96,8 +71,7 @@ int main() {
 /*
 
 12
-9 2 1 9 0 3 2 0 0 1 2 9
-
+9 2 1 0 0 7 2 0 0 1 2 9
 
 
 */

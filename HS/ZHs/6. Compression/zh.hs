@@ -8,8 +8,7 @@ data Bit = Zero | One
     deriving (Eq,Show,Data,Typeable)
 
 getFrequencies :: String -> [(Int, Char)]
-getFrequencies xs = sortBy (compare `on` snd) counted
+getFrequencies xs = occurenceMaps
     where
-        counted = map (\y -> foldl () 0 xs)
-        all = sortUniq `on` (snd xs)
+        occurenceMaps = filter (\(x,c) -> x > 0) (map (\x -> (length $ filter (==x) xs,x) ) ['!'..'z'])
 

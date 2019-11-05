@@ -4,14 +4,14 @@ using namespace std;
 
 typedef enum _eventType{LOGIN = 1, LOGOUT = -1, PAYIN = 2, TAKEOUT = -2}eventType;
 
-typedef struct _time{
+typedef struct _time24{
     int hour;
     int minute;
-}time;
+}time24;
 
 typedef struct _event{
-    time t;
-    eventType type;
+    time24 t;
+    int type;
     int value;
 }event;
 
@@ -25,9 +25,11 @@ int main(){
     }
 
     int maxCount = 0, currCount = 0;
-    bool currIsMax = false;
-    time start;
-    time finish;
+    bool currIsMax = true;
+    time24 start;
+    start.hour = 0;
+    start.minute = 0;
+    time24 finish;
     for(int i = 0; i < N; i++){
         if(events[i].type == LOGIN){
             currCount++;
@@ -39,17 +41,18 @@ int main(){
         }
         if(events[i].type == LOGOUT){
             if(currIsMax){
-                currCount--;
                 finish = events[i].t;
                 currIsMax = false;
             }
+            currCount--;
         }
     }
     if(currIsMax){
-        finish = {23, 59};
+        finish.hour = 23;
+        finish.minute = 59;
     }
 
-    cout << start.hour << start.minute << finish.hour << finish.minute;
+    cout << start.hour << " " << start.minute << " " << finish.hour << " " << finish.minute;
 
     return 0;
 }
