@@ -45,9 +45,9 @@ empty text = [x | x <- [1..lnCount], (lns!!(x-1)) == []]
 splitAt' :: Int -> [a] -> ([a], [a])
 splitAt' _ [] = ([], [])
 splitAt' 0 xs = ([],xs)
-splitAt' num (x:xs) = ((x:y),ys)
+splitAt' n (x:xs) = ((x:y),ys)
     where
-        (y,ys) = splitAt' (num-1) xs
+        (y,ys) = splitAt' (n-1) xs
 
 nub' :: Eq a => [a] -> [a]
 nub' [] = []
