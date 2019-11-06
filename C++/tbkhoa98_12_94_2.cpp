@@ -5,25 +5,6 @@
 
 using namespace std;
 
-typedef struct response {
-    bool legal, larger;
-
-    response(){
-        legal=false;
-        larger=false;
-    }
-
-    response(bool leg, bool large){
-        legal=leg;
-        larger=large;
-    }
-
-    void setValue(bool leg, bool large){
-        legal=leg;
-        larger=large;
-    }
-} response;
-
 typedef struct _divisor {
     int a, b;
 } divisor;
@@ -59,31 +40,31 @@ static int temps[MAXD][MAXD];
 static bool hotspots[MAXD][MAXD];
 static divisor divs[MAXD];
 
-response checkPos(int x1, int y1, int x2, int y2){
+bool checkPos(int x1, int y1, int x2, int y2){
     if(0 <= y1 && y1 < N && 0 <= x1 && x1 < M) {
         if(temps[y1][x1] < temps[y2][x2]) {
-            return response(true, true);
+            return true;
+        } else {
+            return false;
         }
-        return response(true, false);
     }
-    return response(false, false);;
+    return false;
 }
 
 bool isHotspot(int x, int y) {
-    int counter = 0;
-    if(checkPos(x-1,y,x,y)){
-        return true;
+    if(!checkPos(x-1,y,x,y)){
+        return false;
     }
-    if(checkPos(x+1,y,x,y)){
-        return true;
+    if(!checkPos(x+1,y,x,y)){
+        return false;
     }
-    if(checkPos(x,y-1,x,y)){
-        return true;
+    if(!checkPos(x,y-1,x,y)){
+        return false;
     }
-    if(checkPos(x,y+1,x,y)){
-        return true;
+    if(!checkPos(x,y+1,x,y)){
+        return false;
     }
-    return false;
+    return true;
 }
 
 int checkArea(rectangle rect) {
