@@ -19,19 +19,22 @@ or' [] = False;
 or' [b] = b;
 or' (b:bs) = b || and' bs
 
-replicate2 :: Int -> Char -> String
-replicate2 0 c = ""
-replicate2 n c = [c] ++ (replicate2 (n-1) c)
+replicate' :: Int -> Char -> String
+replicate' 0 c = ""
+replicate' n c = [c] ++ (replicate' (n-1) c)
 
-insert2 :: Int -> [Int] -> [Int] 
-insert2 n [] = [n]
-insert2 n (x:xs)
+format' :: Int -> String -> String
+format' n xs = take (n - (length xs) - 1) (cycle " ") ++ xs
+
+insert' :: Int -> [Int] -> [Int] 
+insert' n [] = [n]
+insert' n (x:xs)
     |n <= x = n:x:xs
-    |otherwise = x:(insert n xs)
+    |otherwise = x:(insert' n xs)
 
-sort2 :: [Int] -> [Int]
-sort2 [] = []
-sort2 (x:xs) = insert x (sort xs)
+sort' :: [Int] -> [Int]
+sort' [] = []
+sort' (x:xs) = insert x (sort xs)
 
 --Simple solution using previous answers
 merge :: [Int] -> [Int] -> [Int]
@@ -64,9 +67,9 @@ mergeSort as = sort(mergeSort(fstPart) ++ mergeSort(scdPart))
     where
         (fstPart, scdPart) = splitAt ((length as)`div`2) as
 
-intercalate2 :: String -> [String] -> String
-intercalate2 s [] = []
-intercalate2 s (c:cs) = c ++ s ++ (intercalate2 s cs)
+intercalate' :: String -> [String] -> String
+intercalate' s [] = []
+intercalate' s (c:cs) = c ++ s ++ (intercalate2 s cs)
 
 --the first version gives back an empty string for an empty string
 --This is needed for the pattern matching in the where clause
