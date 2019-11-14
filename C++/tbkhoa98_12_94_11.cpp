@@ -100,8 +100,7 @@ void isHotspot(int x1, int y1, int x2, int y2) {
 
 int checkArea(rectangle rect) {
     int counter = 0;
-    counter += hsCount - hor[rect.a.x].before - hor[rect.b.x].after;
-    counter += hsCount - ver[rect.a.y].before - ver[rect.b.y].after;
+
     return counter;
 }
 
@@ -153,37 +152,33 @@ int main() {
     sort(horizontal.begin(), horizontal.end(), comparePosX);
     hsCount = horizontal.size();
     for(int y = 0; y < N; y++) {
-        int counter = 0;
-        bool isSet = false;
+        int last = -1;
         for(int z = 0; z < hsCount && vertical[z].y <= y; z++) {
-            if(vertical[z].y == y && !isSet){
-                ver[y].before = counter;
-                isSet = true;
-            }
-            counter++;
+            last++;
         }
-        if(!isSet){
-            ver[y].before = counter;
-        }
-        ver[y].after = hsCount - counter;
+        ver[y].before = last;
     }
-
+    for(int y = 0; y < N; y++) {
+        int last = 0;
+        for(int z = 0; z < hsCount && vertical[z].y < y; z++) {
+            last++;
+        }
+        ver[y].after = last;
+    }
     for(int x = 0; x < M; x++) {
-        int counter = 0;
-        bool isSet = false;
+        int last = -1;
         for(int z = 0; z < hsCount && horizontal[z].x <= x; z++) {
-            if(horizontal[z].x == x && !isSet){
-                hor[x].before = counter;
-                isSet = true;
-            }
-            counter++;
+            last++;
         }
-        if(!isSet){
-            hor[x].before = counter;
-        }
-        hor[x].after = hsCount - counter;
+        hor[x].before = last;
     }
-
+    for(int x = 0; x < M; x++) {
+        int last = 0;
+        for(int z = 0; z < hsCount && horizontal[z].x < x; z++) {
+            last++;
+        }
+        hor[x].after = last;
+    }
 
     printf("hsCount:%d \n",hsCount);
     for(int y = 0; y < N; y++) {
