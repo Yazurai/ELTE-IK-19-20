@@ -29,14 +29,16 @@ hasLongLines xs = any' (>= 3) $ map (length . words) (lines xs)
 --Test cases seem to imply elem to be case insensitive while haskell is sensitive by default
 --The default elem is also case insensitive
 elem' :: (Eq a) => a -> [a] -> Bool
-elem' _ [] = False
-elem' v xs = any' (== True) $ map (== v) xs
+elem' v xs = any' (== v) xs
 
 hasAny :: Eq a => [a] -> [a] -> Bool
-hasAny as xs = any' (== True) $ map (`elem'` xs) as
+hasAny as xs = any' (`elem'` xs) as
 
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' f = foldr (\x acc -> if f(x) then x:acc else []) []
+
+takeWhile'' :: (a -> Bool) -> [a] -> [a]
+takeWhile'' f = foldl (\acc x -> if f(x) then acc++[x] else acc) []
 
 --Tried doing it with foldr, but there would be a need for an additional accumulator or a helper bool
 --At which point I found it just more convinient to use simple recursion for simplicity
