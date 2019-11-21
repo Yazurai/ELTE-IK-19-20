@@ -32,4 +32,4 @@ mixWallPatterns mix xs ys = [ [ mix (xs!!y!!x) (ys!!y!!x) | x <- [0..newN] ] | y
         newN = min (length xs) (length ys) - 1
 
 colorStatistics :: [[Int]] -> [(Int,Int)]
-colorStatistics x = map (\x -> (x!!0,length) ) $ group.sort $ foldl (++) [] xs
+colorStatistics xs = map (\x -> (x!!0,length x) ) $ group.sort $ foldl (++) [] (changeInvalidColours xs)

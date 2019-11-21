@@ -56,3 +56,8 @@ users = [ ("mrbean", "4321"), ("admin", "s3cr3t"), ("finn", "algebraic")]
 
 doesUserExist :: String -> [(String, String)] -> Bool
 doesUserExist val (d:ds) = elem val [username | (username,_) <- (d:ds)]
+
+insertAt :: Int -> Char -> [Char] -> [Char]
+insertAt 0 c xs = c:xs
+insertAt n c [] = [c]
+insertAt n c (x:xs) = x:(insertAt (n-1) c xs) 
